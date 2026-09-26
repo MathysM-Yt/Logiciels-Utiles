@@ -137,5 +137,7 @@ if %ERRORLEVEL% neq 0 (
 
 echo Le fichier a été placé sur le Bureau
 echo.
+echo Avant d’appliquer mes réglages, vérifie manuellement les modifications (voir la vidéo si besoin)
+echo.
 pause
 GOTO Menu
