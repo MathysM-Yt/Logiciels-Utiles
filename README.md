@@ -8,7 +8,7 @@
 
 <br>
 
-`Logiciels Utiles by Mathys M` regroupe une sélection de logiciels que je recommande pour Windows.
+`Logiciels Utiles by Mathys M` regroupe une sélection de logiciels que je recommande pour Windows
 
 <div flex="true">
   <a href="https://www.karde.me/mathysm">
