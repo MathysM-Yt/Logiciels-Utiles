@@ -249,12 +249,12 @@ if exist "%USERPROFILE%\Desktop\DS4 Windows by Mathys M\DS4Windows.exe" (
     echo Si tu as un choix entre "Appdata" et "Program Folder", choisi "Program Folder"
     echo.
     echo Le dossier a été placé sur le Bureau
+    start "" /D "%USERPROFILE%\Desktop\DS4 Windows by Mathys M" "DS4Windows.exe"
     echo.
     pause
-    start "" "%USERPROFILE%\Desktop\DS4 Windows by Mathys M\DS4Windows.exe"
+    GOTO Menu
 ) else (
     echo ERREUR : DS4Windows.exe est introuvable
-    echo.
     pause
     GOTO Menu
 )
