@@ -10,6 +10,8 @@
 
 `Logiciels Utiles by Mathys M` regroupe une sélection de logiciels que je recommande pour Windows
 
+Chaque script contient une vidéo de présentation, un raccourci vers le site officiel / GitHub ainsi qu'une automatisation de l'installation
+
 <div flex="true">
   <a href="https://www.karde.me/mathysm">
     Mes réseaux
