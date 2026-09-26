@@ -33,14 +33,6 @@
 
 Chaque logiciel est classé dans une catégorie afin de retrouver facilement les outils dont vous avez besoin.
 
-## Catégories
+## Contenu du projet
 
-- Apparence
-- Audio
-- Diagnostic
-- Gaming
-- Gestion des logiciels
-- Navigateur
-- Optimisation
-- Productivité
-- Stream
+![Contenu de Logiciels Utiles](./Ressources/Assets/Screen%20dossier.png)
