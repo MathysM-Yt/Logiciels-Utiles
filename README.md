@@ -1,38 +1,29 @@
-<div>
-
 <img src="https://github.com/MathysM-Yt.png" width="120px" align="left">
 
-<div align="left">
+### `Logiciels Utiles by Mathys M`
 
-<a href="https://www.karde.me/mathysm">
-  Mes réseaux
-</a>
-•
-<a href="LIEN-VIDEO">
-  Présentation
-</a>
-•
-<a href="https://github.com/MathysM-Yt/Logiciels-Utiles/releases">
-  Télécharger
-</a>
-
-<br>
-<br>
-
-![Downloads](https://img.shields.io/github/downloads/MathysM-Yt/Logiciels-Utiles/total)
-
-</div>
-
-</div>
+[![Downloads](https://img.shields.io/github/downloads/MathysM-Yt/Logiciels-Utiles/total.svg)](https://github.com/MathysM-Yt/Logiciels-Utiles/releases)
 
 <br clear="left">
 
-## Présentation
+<br>
 
 `Logiciels Utiles by Mathys M` regroupe une sélection de logiciels que je recommande pour Windows.
 
-Chaque logiciel est classé dans une catégorie afin de retrouver facilement les outils dont vous avez besoin.
+<div flex="true">
+  <a href="https://www.karde.me/mathysm">
+    Mes réseaux
+  </a>
+  •
+  <a href="LIEN-VIDEO">
+    Présentation
+  </a>
+  •
+  <a href="https://github.com/MathysM-Yt/Logiciels-Utiles/releases">
+    Télécharger
+  </a>
+</div>
 
-## Contenu du projet
+## Preview
 
-![Contenu de Logiciels Utiles](./Ressources/Assets/Screen%20dossier.png)
+![Contenu du dossier](./Ressources/Assets/Screen%20dossier.png)
