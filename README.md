@@ -17,14 +17,16 @@ Un script par logiciel avec vidéo de présentation, raccourci vers le site offi
     Mes réseaux
   </a>
   •
-  <a href="https://youtu.be/BUla3mZsCs4">
-    Présentation
-  </a>
-  •
   <a href="https://github.com/MathysM-Yt/Logiciels-Utiles/releases">
     Télécharger
   </a>
 </div>
+
+## Présentation
+
+Découvrez la présentation complète de `Logiciels Utiles by Mathys M`
+
+[![Voir la vidéo de présentation](https://img.youtube.com/vi/BUla3mZsCs4/maxresdefault.jpg)](https://youtu.be/BUla3mZsCs4)
 
 ## Preview
 
