@@ -3,7 +3,9 @@ chcp 65001 >nul
 setlocal EnableExtensions
 CLS
 
+:: =============
 :: Config du script
+:: =============
 
 set "Logiciel=DS4Windows"
 
@@ -13,6 +15,9 @@ set "Presentation=https://youtu.be/RIQ5WF7ftAc"
 :: Site officiel / Github
 set "Github=https://github.com/hbashton/DS4Windows"
 
+:: ============
+:: Fin de la config
+:: ============
 
 :: Vérifie si le script est exécuté en tant qu'administrateur
 net session >nul 2>&1
@@ -28,7 +33,7 @@ CLS
 
 title %Logiciel% - Menu
 
-echo Create by Mathys M - https://www.karde.me/mathysm
+echo Create by Mathys M - karde.me/mathysm
 echo.
 echo.
 echo       ███╗   ███╗███████╗███╗   ██╗██╗   ██╗
@@ -73,7 +78,7 @@ CLS
 
 title %Logiciel% - Attention
 
-echo Create by Mathys M - https://www.karde.me/mathysm
+echo Create by Mathys M - karde.me/mathysm
 echo.
 echo.
 echo        █████╗ ████████╗████████╗███████╗███╗   ██╗████████╗██╗ ██████╗ ███╗   ██╗
@@ -144,7 +149,7 @@ CLS
 
 title %Logiciel% - PlayStation Accessories
 
-echo Create by Mathys M - https://www.karde.me/mathysm
+echo Create by Mathys M - karde.me/mathysm
 echo.
 echo.
 echo       ██████╗ ██╗   ██╗ █████╗ ██╗     ███████╗███████╗███╗   ██╗███████╗███████╗
@@ -167,7 +172,7 @@ CLS
 
 title %Logiciel% - Téléchargement
 
-echo Create by Mathys M - https://www.karde.me/mathysm
+echo Create by Mathys M - karde.me/mathysm
 echo.
 echo.
 echo       ██████╗  ██████╗ ██╗    ██╗███╗   ██╗██╗      ██████╗  █████╗ ██████╗ 
@@ -200,7 +205,7 @@ CLS
 
 title %Logiciel% - Extraction
 
-echo Create by Mathys M - https://www.karde.me/mathysm
+echo Create by Mathys M - karde.me/mathysm
 echo.
 echo.
 echo       ███████╗██╗  ██╗████████╗██████╗  █████╗  ██████╗████████╗
@@ -233,7 +238,7 @@ GOTO Launch
 CLS
 title %Logiciel% - Installation
 
-echo Create by Mathys M - https://www.karde.me/mathysm
+echo Create by Mathys M - karde.me/mathysm
 echo.
 echo.
 echo       ██╗███╗   ██╗███████╗████████╗ █████╗ ██╗     ██╗     
@@ -265,7 +270,7 @@ GOTO Menu
 :ASCIIDrivers
 title %Logiciel% - Installation des drivers
 
-echo Create by Mathys M - https://www.karde.me/mathysm
+echo Create by Mathys M - karde.me/mathysm
 echo.
 echo.
 echo       ██████╗ ██████╗ ██╗██╗   ██╗███████╗██████╗ ███████╗
