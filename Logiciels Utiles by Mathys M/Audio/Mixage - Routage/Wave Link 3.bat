@@ -37,7 +37,7 @@ CLS
 
 title %Logiciel% - Menu
 
-echo Create by Mathys M - https://www.karde.me/mathysm
+echo Create by Mathys M - karde.me/mathysm
 echo.
 echo.
 echo       ███╗   ███╗███████╗███╗   ██╗██╗   ██╗
@@ -82,7 +82,7 @@ CLS
 
 title %Logiciel% - Installation automatique
 
-echo Create by Mathys M - https://www.karde.me/mathysm
+echo Create by Mathys M - karde.me/mathysm
 echo.
 echo.
 echo       ██╗███╗   ██╗███████╗████████╗ █████╗ ██╗     ██╗     
