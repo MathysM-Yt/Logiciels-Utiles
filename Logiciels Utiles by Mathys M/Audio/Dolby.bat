@@ -37,7 +37,7 @@ CLS
 
 title %Logiciel% - Menu
 
-echo Create by Mathys M - https://www.karde.me/mathysm
+echo Create by Mathys M - karde.me/mathysm
 echo.
 echo.
 echo       ███╗   ███╗███████╗███╗   ██╗██╗   ██╗
@@ -52,10 +52,12 @@ echo.
 echo 1. Présentation
 echo 2. Site officiel / Github
 echo 3. Installation automatique
+echo 4. Désinstallation
 echo.
 
-CHOICE /C 123 /M "Entre ton choix:"
+CHOICE /C 1234 /M "Entre ton choix:"
 
+IF ERRORLEVEL 4 GOTO Uninstall
 IF ERRORLEVEL 3 GOTO Install
 IF ERRORLEVEL 2 GOTO Github
 IF ERRORLEVEL 1 GOTO Presentation
@@ -82,7 +84,7 @@ CLS
 
 title %Logiciel% - Installation automatique
 
-echo Create by Mathys M - https://www.karde.me/mathysm
+echo Create by Mathys M - karde.me/mathysm
 echo.
 echo.
 echo       ██╗███╗   ██╗███████╗████████╗ █████╗ ██╗     ██╗     
@@ -121,4 +123,37 @@ echo.
 echo Le .exe a été placé sur le Bureau
 echo.
 pause
+GOTO Menu
+
+:Uninstall
+CLS
+
+title %Logiciel% - Installation automatique
+
+echo Create by Mathys M - karde.me/mathysm
+echo.
+echo.
+echo       ██╗   ██╗███╗   ██╗██╗███╗   ██╗███████╗████████╗ █████╗ ██╗     ██╗     
+echo       ██║   ██║████╗  ██║██║████╗  ██║██╔════╝╚══██╔══╝██╔══██╗██║     ██║     
+echo       ██║   ██║██╔██╗ ██║██║██╔██╗ ██║███████╗   ██║   ███████║██║     ██║     
+echo       ██║   ██║██║╚██╗██║██║██║╚██╗██║╚════██║   ██║   ██╔══██║██║     ██║     
+echo       ╚██████╔╝██║ ╚████║██║██║ ╚████║███████║   ██║   ██║  ██║███████╗███████╗
+echo        ╚═════╝ ╚═╝  ╚═══╝╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝                                                                      
+echo.
+echo.
+
+dism /Online /Remove-Package /PackageName:Microsoft-Windows-DolbyCodec-WOW64-Package~31bf3856ad364e35~wow64~~10.0.26100.1
+
+dism /Online /Remove-Package /PackageName:Microsoft-Windows-DolbyCodec-Package~31bf3856ad364e35~amd64~~10.0.26100.1
+
+echo.
+echo.
+echo Désinstallation terminée !
+echo.
+echo Retour au menu dans:
+for /L %%i in (4,-1,1) do (
+    echo %%i...
+    timeout /t 1 /nobreak >nul
+)
+
 GOTO Menu
