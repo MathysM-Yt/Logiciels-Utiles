@@ -15,29 +15,16 @@ set "Presentation=https://youtu.be/lUrY0B1v59Y"
 :: Site officiel / Github
 set "Github=https://spicetify.app/"
 
-:: Installation automatique
-set "Install=winget.exe install --id Spicetify.Spicetify --exact --source winget --accept-source-agreements --disable-interactivity --silent --accept-package-agreements --force"
-
 :: ============
 :: Fin de la config
 :: ============
-
-
-:: Vérifie si le script est exécuté en tant qu'administrateur
-net session >nul 2>&1
-if %errorLevel% neq 0 (
-    echo Le script nécessite des droits administratifs.
-    echo Redémarrage avec élévation de privilèges...
-    powershell.exe -Command "Start-Process '%~0' -Verb RunAs"
-    exit /b
-)
 
 :Menu
 CLS
 
 title %Logiciel% - Menu
 
-echo Create by Mathys M - https://www.karde.me/mathysm
+echo Create by Mathys M - karde.me/mathysm
 echo.
 echo.
 echo       ███╗   ███╗███████╗███╗   ██╗██╗   ██╗
@@ -56,7 +43,7 @@ echo.
 
 CHOICE /C 123 /M "Entre ton choix:"
 
-IF ERRORLEVEL 3 GOTO Install
+IF ERRORLEVEL 3 GOTO Attention
 IF ERRORLEVEL 2 GOTO Github
 IF ERRORLEVEL 1 GOTO Presentation
 
@@ -77,12 +64,41 @@ start "" "%Github%"
 GOTO Menu
 
 
+:Attention
+CLS
+
+title %Logiciel% - Attention
+
+echo Create by Mathys M - karde.me/mathysm
+echo.
+echo.
+echo        █████╗ ████████╗████████╗███████╗███╗   ██╗████████╗██╗ ██████╗ ███╗   ██╗
+echo       ██╔══██╗╚══██╔══╝╚══██╔══╝██╔════╝████╗  ██║╚══██╔══╝██║██╔═══██╗████╗  ██║
+echo       ███████║   ██║      ██║   █████╗  ██╔██╗ ██║   ██║   ██║██║   ██║██╔██╗ ██║
+echo       ██╔══██║   ██║      ██║   ██╔══╝  ██║╚██╗██║   ██║   ██║██║   ██║██║╚██╗██║
+echo       ██║  ██║   ██║      ██║   ███████╗██║ ╚████║   ██║   ██║╚██████╔╝██║ ╚████║
+echo       ╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
+echo.
+echo.
+
+start "" "windowsdefender://threatsettings"
+
+echo Pense à désactiver temporairement ton antivirus avant de continuer
+echo.
+echo L'antivirus est-il désactivé ?
+echo.
+
+CHOICE /C YN /N /M "[Y]es / [N]o : "
+
+IF ERRORLEVEL 2 GOTO Menu
+IF ERRORLEVEL 1 GOTO Install
+
 :Install
 CLS
 
 title %Logiciel% - Installation automatique
 
-echo Create by Mathys M - https://www.karde.me/mathysm
+echo Create by Mathys M - karde.me/mathysm
 echo.
 echo.
 echo       ██╗███╗   ██╗███████╗████████╗ █████╗ ██╗     ██╗     
@@ -94,7 +110,11 @@ echo       ╚═╝╚═╝  ╚═══╝╚══════╝   ╚═�
 echo.
 echo.
 
-%Install%
+chcp 850 >nul
+powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "iwr -useb https://raw.githubusercontent.com/spicetify/cli/main/install.ps1 | iex"
+
+powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "iwr -useb https://raw.githubusercontent.com/spicetify/marketplace/main/resources/install.ps1 | iex"
+chcp 65001 >nul
 
 echo.
 echo.
