@@ -16,7 +16,7 @@ set "Presentation=https://youtu.be/udlHuklcIBU"
 set "Github=https://files.community/"
 
 :: Installation automatique
-set "Install=winget.exe uninstall --id FilesCommunity.Files --exact --source winget --accept-source-agreements --disable-interactivity --version "4.2.9.0" --silent"
+set "Install=winget.exe install --id FilesCommunity.Files --exact --source winget --accept-source-agreements --disable-interactivity --silent --accept-package-agreements --force"
 
 :: ============
 :: Fin de la config
@@ -37,7 +37,7 @@ CLS
 
 title %Logiciel% - Menu
 
-echo Create by Mathys M - https://www.karde.me/mathysm
+echo Create by Mathys M - karde.me/mathysm
 echo.
 echo.
 echo       ███╗   ███╗███████╗███╗   ██╗██╗   ██╗
@@ -82,7 +82,7 @@ CLS
 
 title %Logiciel% - Installation automatique
 
-echo Create by Mathys M - https://www.karde.me/mathysm
+echo Create by Mathys M - karde.me/mathysm
 echo.
 echo.
 echo       ██╗███╗   ██╗███████╗████████╗ █████╗ ██╗     ██╗     
