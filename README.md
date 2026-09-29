@@ -6,12 +6,6 @@
 
 <br clear="left">
 
-<br>
-
-`Logiciels Utiles by Mathys M` regroupe une sélection de logiciels que je recommande pour Windows
-
-Un script par logiciel avec vidéo de présentation, raccourci vers le site officiel/GitHub et installation automatisée
-
 <div flex="true">
   <a href="https://www.karde.me/mathysm">
     Mes réseaux
@@ -20,7 +14,17 @@ Un script par logiciel avec vidéo de présentation, raccourci vers le site offi
   <a href="https://github.com/MathysM-Yt/Logiciels-Utiles/releases">
     Télécharger
   </a>
+  •
+  <a href="https://ko-fi.com/mathysm">
+    Soutenir le projet
+  </a>
 </div>
+
+<br>
+
+`Logiciels Utiles by Mathys M` regroupe une sélection de logiciels que je recommande pour Windows
+
+Un script par logiciel avec vidéo de présentation, raccourci vers le site officiel/GitHub et installation automatisée
 
 ## Présentation
 
