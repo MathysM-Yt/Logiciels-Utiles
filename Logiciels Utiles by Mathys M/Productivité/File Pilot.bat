@@ -15,9 +15,6 @@ set "Presentation=https://youtu.be/b0T-ScOdRzU"
 :: Site officiel / Github
 set "Github=https://filepilot.tech/"
 
-:: Installation automatique
-set "Install=winget.exe install --id Voidstar.FilePilot --exact --source winget --accept-source-agreements --disable-interactivity --silent --accept-package-agreements --force"
-
 :: ============
 :: Fin de la config
 :: ============
@@ -37,7 +34,7 @@ CLS
 
 title %Logiciel% - Menu
 
-echo Create by Mathys M - https://www.karde.me/mathysm
+echo Create by Mathys M - karde.me/mathysm
 echo.
 echo.
 echo       ███╗   ███╗███████╗███╗   ██╗██╗   ██╗
@@ -82,7 +79,7 @@ CLS
 
 title %Logiciel% - Installation automatique
 
-echo Create by Mathys M - https://www.karde.me/mathysm
+echo Create by Mathys M - karde.me/mathysm
 echo.
 echo.
 echo       ██╗███╗   ██╗███████╗████████╗ █████╗ ██╗     ██╗     
@@ -94,7 +91,9 @@ echo       ╚═╝╚═╝  ╚═══╝╚══════╝   ╚═�
 echo.
 echo.
 
-%Install%
+chcp 850 >nul
+powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "$ProgressPreference='SilentlyContinue'; winget.exe install --id Voidstar.FilePilot --exact --source winget --accept-source-agreements --disable-interactivity --silent --accept-package-agreements --force; $o=Join-Path ([Environment]::GetFolderPath('Desktop')) 'File Pilot.exe'; Move-Item (Join-Path $env:LOCALAPPDATA 'Microsoft\WinGet\Links\FPilot.exe') $o -Force; Start-Process $o"
+chcp 65001 >nul
 
 echo.
 echo.
