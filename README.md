@@ -24,7 +24,7 @@ Un script par logiciel avec vidéo de présentation, raccourci vers le site offi
 
 ## Présentation
 
-Découvrez la présentation complète de `Logiciels Utiles by Mathys M`
+Clique pour voir la vidéo :)
 
 [![Voir la vidéo de présentation](https://img.youtube.com/vi/BUla3mZsCs4/maxresdefault.jpg)](https://youtu.be/BUla3mZsCs4)
 
