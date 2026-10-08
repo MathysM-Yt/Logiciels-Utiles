@@ -24,9 +24,8 @@ set "Install=winget.exe install --id XP89DCGQ3K6VLD --exact --source msstore --a
 
 
 :: Vérifie si le script est exécuté en tant qu'administrateur
-net session >nul 2>&1
-if %errorLevel% neq 0 (
-    echo Le script nécessite des droits administratifs.
+fltmc >nul 2>&1 || (
+    echo Le script nécessite des droits administratifs
     echo Redémarrage avec élévation de privilèges...
     powershell.exe -Command "Start-Process '%~0' -Verb RunAs"
     exit /b
