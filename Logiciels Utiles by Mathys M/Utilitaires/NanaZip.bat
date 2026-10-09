@@ -7,16 +7,16 @@ CLS
 :: Config du script
 :: =============
 
-set "Logiciel=CapFrameX"
+set "Logiciel=NanaZip"
 
 :: Vidéo Youtube
-set "Presentation=https://youtu.be/XZljNj8kCEE"
+set "Presentation=https://youtu.be/bXZhaRFtfLw?si=sXzs_IfBX-HzvaMc&t=511"
 
 :: Site officiel / Github
-set "Github=https://www.capframex.com/"
+set "Github=https://github.com/M2Team/Nanazip"
 
 :: Installation automatique
-set "Install=winget.exe install --id CXWorld.CapFrameX --exact --source winget --accept-source-agreements --disable-interactivity --silent --accept-package-agreements --force"
+set "Install=winget.exe install --id M2Team.NanaZip --exact --source winget --accept-source-agreements --disable-interactivity --silent --accept-package-agreements --force"
 
 :: ============
 :: Fin de la config

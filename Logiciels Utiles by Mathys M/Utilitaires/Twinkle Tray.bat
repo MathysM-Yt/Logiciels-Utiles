@@ -7,29 +7,20 @@ CLS
 :: Config du script
 :: =============
 
-set "Logiciel=Window Centering"
+set "Logiciel=Twinkle Tray"
 
 :: Vidéo Youtube
-set "Presentation=https://youtu.be/bXZhaRFtfLw?si=HNsMoT35bc59Wjdu&t=1369"
+set "Presentation=https://youtu.be/ErlSOsRA56c"
 
 :: Site officiel / Github
-set "Github=https://kamilszymborski.github.io/"
+set "Github=https://twinkletray.com/"
 
 :: Installation automatique
-set "Install=winget.exe install --id KamilSzymborski.WindowCenteringHelper --exact --source winget --accept-source-agreements --disable-interactivity --silent --accept-package-agreements --force"
+set "Install=winget.exe install --id xanderfrangos.twinkletray --exact --source winget --accept-source-agreements --disable-interactivity --silent --accept-package-agreements --force"
 
 :: ============
 :: Fin de la config
 :: ============
-
-
-:: Vérifie si le script est exécuté en tant qu'administrateur
-fltmc >nul 2>&1 || (
-    echo Le script nécessite des droits administratifs
-    echo Redémarrage avec élévation de privilèges...
-    powershell.exe -Command "Start-Process '%~0' -Verb RunAs"
-    exit /b
-)
 
 :Menu
 CLS

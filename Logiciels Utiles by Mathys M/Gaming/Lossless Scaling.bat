@@ -19,15 +19,6 @@ set "Github=https://store.steampowered.com/app/993090/Lossless_Scaling/"
 :: Fin de la config
 :: ============
 
-
-:: Vérifie si le script est exécuté en tant qu'administrateur
-fltmc >nul 2>&1 || (
-    echo Le script nécessite des droits administratifs
-    echo Redémarrage avec élévation de privilèges...
-    powershell.exe -Command "Start-Process '%~0' -Verb RunAs"
-    exit /b
-)
-
 :Menu
 CLS
 

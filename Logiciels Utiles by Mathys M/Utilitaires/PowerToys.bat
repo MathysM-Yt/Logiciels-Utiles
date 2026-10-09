@@ -7,29 +7,20 @@ CLS
 :: Config du script
 :: =============
 
-set "Logiciel=Twinkle Tray"
+set "Logiciel=PowerToys"
 
 :: Vidéo Youtube
-set "Presentation=https://youtu.be/ErlSOsRA56c"
+set "Presentation=https://youtu.be/4eeDEznQWMs"
 
 :: Site officiel / Github
-set "Github=https://twinkletray.com/"
+set "Github=https://github.com/microsoft/powertoys"
 
 :: Installation automatique
-set "Install=winget.exe install --id xanderfrangos.twinkletray --exact --source winget --accept-source-agreements --disable-interactivity --silent --accept-package-agreements --force"
+set "Install=winget.exe install --id XP89DCGQ3K6VLD --exact --source msstore --accept-source-agreements --disable-interactivity --silent --accept-package-agreements --force"
 
 :: ============
 :: Fin de la config
 :: ============
-
-
-:: Vérifie si le script est exécuté en tant qu'administrateur
-fltmc >nul 2>&1 || (
-    echo Le script nécessite des droits administratifs
-    echo Redémarrage avec élévation de privilèges...
-    powershell.exe -Command "Start-Process '%~0' -Verb RunAs"
-    exit /b
-)
 
 :Menu
 CLS

@@ -7,29 +7,20 @@ CLS
 :: Config du script
 :: =============
 
-set "Logiciel=PowerToys"
+set "Logiciel=DeviceCleanup"
 
 :: Vidéo Youtube
-set "Presentation=https://youtu.be/4eeDEznQWMs"
+set "Presentation=https://youtu.be/bXZhaRFtfLw?si=BCB9wui0IkxTMpXf&t=189"
 
 :: Site officiel / Github
-set "Github=https://github.com/microsoft/powertoys"
+set "Github=https://www.uwe-sieber.de/misc_tools_e.html"
 
 :: Installation automatique
-set "Install=winget.exe install --id XP89DCGQ3K6VLD --exact --source msstore --accept-source-agreements --disable-interactivity --silent --accept-package-agreements --force"
+set "Install=https://www.uwe-sieber.de/files/DeviceCleanup_x64.zip"
 
 :: ============
 :: Fin de la config
 :: ============
-
-
-:: Vérifie si le script est exécuté en tant qu'administrateur
-fltmc >nul 2>&1 || (
-    echo Le script nécessite des droits administratifs
-    echo Redémarrage avec élévation de privilèges...
-    powershell.exe -Command "Start-Process '%~0' -Verb RunAs"
-    exit /b
-)
 
 :Menu
 CLS

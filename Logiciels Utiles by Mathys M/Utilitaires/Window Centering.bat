@@ -7,16 +7,16 @@ CLS
 :: Config du script
 :: =============
 
-set "Logiciel=CapFrameX"
+set "Logiciel=Window Centering"
 
 :: Vidéo Youtube
-set "Presentation=https://youtu.be/XZljNj8kCEE"
+set "Presentation=https://youtu.be/bXZhaRFtfLw?si=HNsMoT35bc59Wjdu&t=1369"
 
 :: Site officiel / Github
-set "Github=https://www.capframex.com/"
+set "Github=https://kamilszymborski.github.io/"
 
 :: Installation automatique
-set "Install=winget.exe install --id CXWorld.CapFrameX --exact --source winget --accept-source-agreements --disable-interactivity --silent --accept-package-agreements --force"
+set "Install=winget.exe install --id KamilSzymborski.WindowCenteringHelper --exact --source winget --accept-source-agreements --disable-interactivity --silent --accept-package-agreements --force"
 
 :: ============
 :: Fin de la config
