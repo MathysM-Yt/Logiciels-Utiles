@@ -22,6 +22,14 @@ set "Install=winget.exe install --id 9N0866FS04W8 --exact --source msstore --acc
 :: Fin de la config
 :: ============
 
+:: Vérifie si le script est exécuté en tant qu'administrateur
+fltmc >nul 2>&1 || (
+    echo Le script nécessite des droits administratifs
+    echo Redémarrage avec élévation de privilèges...
+    powershell.exe -Command "Start-Process '%~0' -Verb RunAs"
+    exit /b
+)
+
 :Menu
 CLS
 
@@ -87,7 +95,7 @@ echo.
 echo.
 
 chcp 850 >nul
-powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "$ProgressPreference='SilentlyContinue'; $u='https://github.com/SimonMacer/AnWave/releases/download/RollbackDolby/RollbackDolby-v1.2.0.81-20260626.rar'; $d=Join-Path $env:TEMP 'RollbackDolby-v1.2.0.81-20260626.rar'; $o=[Environment]::GetFolderPath('Desktop'); Invoke-WebRequest -UseBasicParsing -Uri $u -OutFile $d; tar.exe -xf $d -C $o; Remove-Item $d -Force; Start-Process (Join-Path $o 'RollbackDolby.exe')"
+powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "$ProgressPreference='SilentlyContinue'; $r=Invoke-RestMethod -Uri 'https://api.github.com/repos/SimonMacer/AnWave/releases/tags/RollbackDolby'; $a=$r.assets | Where-Object { $_.name -match '^RollbackDolby.*\.rar$' } | Sort-Object { [datetime]$_.created_at } -Descending | Select-Object -First 1; if (-not $a) { throw 'Archive RollbackDolby introuvable dans la release GitHub.' }; $d=Join-Path ([Environment]::GetFolderPath('Desktop')) $a.name; Invoke-WebRequest -UseBasicParsing -Uri $a.browser_download_url -OutFile $d; tar.exe -xf $d -C ([Environment]::GetFolderPath('Desktop')); if ($LASTEXITCODE -ne 0) { throw 'Échec de l’extraction.' }; Remove-Item $d -Force; Start-Process (Join-Path ([Environment]::GetFolderPath('Desktop')) 'RollbackDolby.exe')"
 chcp 65001 >nul
 
 %Install%
