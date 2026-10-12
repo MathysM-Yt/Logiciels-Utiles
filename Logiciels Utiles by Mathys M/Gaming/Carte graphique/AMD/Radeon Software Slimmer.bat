@@ -22,6 +22,14 @@ set "Install=winget.exe install --id Microsoft.DotNet.DesktopRuntime.9 --exact -
 :: Fin de la config
 :: ============
 
+:: Vérifie si le script est exécuté en tant qu'administrateur
+fltmc >nul 2>&1 || (
+    echo Le script nécessite des droits administratifs
+    echo Redémarrage avec élévation de privilèges...
+    powershell.exe -Command "Start-Process '%~0' -Verb RunAs"
+    exit /b
+)
+
 :Menu
 CLS
 
@@ -68,6 +76,32 @@ GOTO Menu
 
 
 :Install
+call :ASCII
+
+%Install%
+
+call :ASCII
+
+chcp 850 >nul
+powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "$r=Invoke-RestMethod 'https://api.github.com/repos/GSDragoon/RadeonSoftwareSlimmer/releases/latest'; $a=$r.assets | Where-Object { $_.name -match 'net9' -and $_.name -match '\.zip$' } | Select-Object -First 1; if (-not $a) { throw 'Asset .NET 9 introuvable dans la dernière release.' }; $o=[Environment]::GetFolderPath('Desktop'); $d=Join-Path $o $a.name; Invoke-WebRequest $a.browser_download_url -OutFile $d; $e=Join-Path $o 'RadeonSoftwareSlimmer'; if (Test-Path $e) { Remove-Item $e -Recurse -Force }; Expand-Archive $d $e -Force; Remove-Item $d -Force; Start-Process (Get-ChildItem $e -Recurse -Filter 'RadeonSoftwareSlimmer.exe' | Select-Object -First 1).FullName"
+chcp 65001 >nul
+
+if %errorlevel% neq 0 (
+    echo.
+    echo ERREUR : Le téléchargement ou l'extraction a échoué
+    echo.
+    pause
+    GOTO Menu
+)
+
+call :ASCII
+
+echo %Logiciel% a été placé sur le Bureau
+echo.
+pause
+GOTO Menu
+
+:ASCII
 CLS
 
 title %Logiciel% - Installation automatique
@@ -83,25 +117,4 @@ echo       ██║██║ ╚████║███████║   █�
 echo       ╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝
 echo.
 echo.
-
-%Install%
-
-chcp 850 >nul
-powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "$r=Invoke-RestMethod 'https://api.github.com/repos/GSDragoon/RadeonSoftwareSlimmer/releases/latest'; $a=$r.assets | Where-Object { $_.name -match 'net9' -and $_.name -match '\.zip$' } | Select-Object -First 1; if (-not $a) { throw 'Asset .NET 9 introuvable dans la dernière release.' }; $d=Join-Path $env:TEMP $a.name; Invoke-WebRequest $a.browser_download_url -OutFile $d; $o=Join-Path ([Environment]::GetFolderPath('Desktop')) 'RadeonSoftwareSlimmer'; if (Test-Path $o) { Remove-Item $o -Recurse -Force }; Expand-Archive $d $o -Force; Remove-Item $d -Force; Start-Process (Get-ChildItem $o -Recurse -Filter 'RadeonSoftwareSlimmer.exe' | Select-Object -First 1).FullName"
-chcp 65001 >nul
-
-if %errorlevel% neq 0 (
-    echo.
-    echo ERREUR : Le téléchargement a échoué
-    echo.
-    pause
-    GOTO Menu
-)
-
-echo.
-echo Téléchargement terminé !
-echo.
-echo Le dossier a été placé sur le Bureau
-echo.
-pause
-GOTO Quitter
+exit /b
