@@ -103,36 +103,23 @@ IF ERRORLEVEL 1 GOTO Drivers
 
 
 :Drivers
-CLS
 
-call :ASCIIDrivers
+call :ASCII
 
 echo Installation des composants nécessaires à DS4Windows...
 echo.
 
 winget.exe install --id "Microsoft.DotNet.DesktopRuntime.8" --exact --source winget --accept-source-agreements --disable-interactivity --silent --accept-package-agreements --force
 
-CLS
-
-call :ASCIIDrivers
-
-echo Installation des composants nécessaires à DS4Windows...
 echo.
 
 winget.exe install --id "Nefarius.HidHide" --exact --source winget --accept-source-agreements --disable-interactivity --silent --accept-package-agreements --force
 
-CLS
-
-call :ASCIIDrivers
-
-echo Installation des composants nécessaires à DS4Windows...
 echo.
 
 winget.exe install --id "ViGEm.ViGEmBus" --exact --source winget --accept-source-agreements --disable-interactivity --silent --accept-package-agreements --force
 
-CLS
-
-call :ASCIIDrivers
+call :ASCII
 
 echo Les drivers nécessaires pour DS4 Windows sont installés !
 
@@ -184,51 +171,8 @@ echo.
 echo.
 
 chcp 850 >nul
-powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "$ProgressPreference='SilentlyContinue'; Invoke-WebRequest -UseBasicParsing -Uri 'https://MathysM-Yt.github.io/Logiciels-Utiles/Ressources/DS4%%20Windows%%20by%%20Mathys%%20M.7z' -OutFile ([Environment]::GetFolderPath('Desktop') + '\DS4 Windows by Mathys M.7z')"
+powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "$ProgressPreference='SilentlyContinue'; $ErrorActionPreference='Stop'; try { $o=[Environment]::GetFolderPath('Desktop'); $z=Join-Path $o 'DS4 Windows by Mathys M.zip'; Invoke-WebRequest -UseBasicParsing -Uri 'https://MathysM-Yt.github.io/Logiciels-Utiles/Ressources/DS4%%20Windows%%20by%%20Mathys%%20M.zip' -OutFile $z; Expand-Archive -LiteralPath $z -DestinationPath $o -Force; Remove-Item $z -Force } catch { exit 1 }"
 chcp 65001 >nul
-
-
-if %ERRORLEVEL% neq 0 (
-    echo.
-    echo ERREUR : Le téléchargement a échoué
-    echo.
-    pause
-    GOTO Menu
-)
-
-GOTO Extract
-
-
-:Extract
-CLS
-
-title %Logiciel% - Extraction
-
-echo Create by Mathys M - karde.me/mathysm
-echo.
-echo.
-echo       ███████╗██╗  ██╗████████╗██████╗  █████╗  ██████╗████████╗
-echo       ██╔════╝╚██╗██╔╝╚══██╔══╝██╔══██╗██╔══██╗██╔════╝╚══██╔══╝
-echo       █████╗   ╚███╔╝    ██║   ██████╔╝███████║██║        ██║   
-echo       ██╔══╝   ██╔██╗    ██║   ██╔══██╗██╔══██║██║        ██║   
-echo       ███████╗██╔╝ ██╗   ██║   ██║  ██║██║  ██║╚██████╗   ██║   
-echo       ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝   ╚═╝
-echo.
-echo.
-
-tar.exe -xf "%USERPROFILE%\Desktop\DS4 Windows by Mathys M.7z" -C "%USERPROFILE%\Desktop"
-
-if %ERRORLEVEL% neq 0 (
-    echo.
-    echo ERREUR : L'extraction a échoué
-    echo.
-    echo L'archive .7z n'a pas été supprimée
-    echo.
-    pause
-    GOTO Menu
-)
-
-del /f /q "%USERPROFILE%\Desktop\DS4 Windows by Mathys M.7z"
 
 GOTO Launch
 
@@ -252,7 +196,7 @@ echo.
 if exist "%USERPROFILE%\Desktop\DS4 Windows by Mathys M\DS4Windows.exe" (
     echo Si tu as un choix entre "Appdata" et "Program Folder", choisi "Program Folder"
     echo.
-    echo Le dossier a été placé sur le Bureau
+    echo %Logiciel% a été placé sur le Bureau
     echo.
     pause
     start "" "%USERPROFILE%\Desktop\DS4 Windows by Mathys M\DS4Windows.exe"
@@ -266,7 +210,9 @@ if exist "%USERPROFILE%\Desktop\DS4 Windows by Mathys M\DS4Windows.exe" (
 GOTO Menu
 
 
-:ASCIIDrivers
+:ASCII
+CLS
+
 title %Logiciel% - Installation des drivers
 
 echo Create by Mathys M - karde.me/mathysm
@@ -277,7 +223,7 @@ echo       ██╔══██╗██╔══██╗██║██║   
 echo       ██║  ██║██████╔╝██║██║   ██║█████╗  ██████╔╝███████╗
 echo       ██║  ██║██╔══██╗██║╚██╗ ██╔╝██╔══╝  ██╔══██╗╚════██║
 echo       ██████╔╝██║  ██║██║ ╚████╔╝ ███████╗██║  ██║███████║
-echo       ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝  ╚══════╝╚═╝  ╚═╝╚══════╝
+echo       ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝  ╚══════╝ ╚═╝  ╚══════╝
 echo.
 echo.
 exit /b
