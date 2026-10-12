@@ -16,7 +16,7 @@ set "Presentation=https://youtu.be/bXZhaRFtfLw?si=GFC9TKDTzwFC8cAo&t=1342"
 set "Github=https://github.com/MicaForEveryone/MicaForEveryone"
 
 :: Installation automatique
-set "Install=winget.exe install --id MicaForEveryone.MicaForEveryone --exact --source winget --accept-source-agreements --disable-interactivity --silent --accept-package-agreements --force"
+set "Install=powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "Add-AppxPackage -AppInstallerFile 'https://micaforeveryone.github.io/MicaForEveryone.appinstaller'""
 
 :: ============
 :: Fin de la config
