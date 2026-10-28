@@ -84,7 +84,7 @@ echo       ╚═╝╚═╝  ╚═══╝╚══════╝   ╚═�
 echo.
 echo.
 
-%Install%
+start "" "%Install%"
 
 echo.
 echo.
