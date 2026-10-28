@@ -85,12 +85,4 @@ chcp 850 >nul
 powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "$ProgressPreference='SilentlyContinue'; $ErrorActionPreference='Stop'; try { $d=Join-Path ([Environment]::GetFolderPath('Desktop')) 'SCSKiller-Setup.exe'; Invoke-WebRequest -UseBasicParsing -Uri 'https://github.com/BlueHeisenberg/SCSKiller/releases/download/v1.3.0/SCSKiller-Setup.exe' -OutFile $d; Start-Process $d } catch { exit 1 }"
 chcp 65001 >nul
 
-if %errorlevel% neq 0 (
-    echo.
-    echo ERREUR : Le téléchargement ou le lancement a échoué
-    echo.
-    pause
-    GOTO Menu
-)
-
 GOTO Menu
