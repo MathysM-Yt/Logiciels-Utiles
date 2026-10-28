@@ -86,14 +86,6 @@ chcp 850 >nul
 powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "$r=Invoke-RestMethod 'https://api.github.com/repos/GSDragoon/RadeonSoftwareSlimmer/releases/latest'; $a=$r.assets | Where-Object { $_.name -match 'net9' -and $_.name -match '\.zip$' } | Select-Object -First 1; if (-not $a) { throw 'Asset .NET 9 introuvable dans la dernière release.' }; $o=[Environment]::GetFolderPath('Desktop'); $d=Join-Path $o $a.name; Invoke-WebRequest $a.browser_download_url -OutFile $d; $e=Join-Path $o 'RadeonSoftwareSlimmer'; if (Test-Path $e) { Remove-Item $e -Recurse -Force }; Expand-Archive $d $e -Force; Remove-Item $d -Force; Start-Process (Get-ChildItem $e -Recurse -Filter 'RadeonSoftwareSlimmer.exe' | Select-Object -First 1).FullName"
 chcp 65001 >nul
 
-if %errorlevel% neq 0 (
-    echo.
-    echo ERREUR : Le téléchargement ou l'extraction a échoué
-    echo.
-    pause
-    GOTO Menu
-)
-
 call :ASCII
 
 echo %Logiciel% a été placé sur le Bureau
